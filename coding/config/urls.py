@@ -16,6 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 from hospital_web import views
 from django.contrib.auth.views import LoginView,LogoutView
 
@@ -113,5 +115,6 @@ urlpatterns +=[
 
 ]
 
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 #Developed By : Ikwogya James
 #facebook : fb.com/
